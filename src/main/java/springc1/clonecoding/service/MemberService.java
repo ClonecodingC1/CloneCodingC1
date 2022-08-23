@@ -38,14 +38,14 @@ public class MemberService {
 
     @Transactional
     public ResponseDto<?> userCheck(UserCheckRequestDto requestDto) {
-        memberRepository.findByUsername(requestDto.getUsername()).orElseThrow(() -> new IllegalArgumentException("중복된 아이디가 존재합니다."));
+        isPresentUserName(requestDto.getUsername());
         return ResponseDto.success("success");
     }
 
 
     @Transactional
     public ResponseDto<?> nickCheck(NickCheckRequestDto requestDto) {
-        memberRepository.findByNickname(requestDto.getNickname()).orElseThrow(() -> new IllegalArgumentException("중복된 닉네임이 존재합니다."));
+        isPresentNickName(requestDto.getNickname());
         return ResponseDto.success("success");
     }
 

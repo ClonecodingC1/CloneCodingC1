@@ -1,6 +1,7 @@
 package springc1.clonecoding.controller.response;
 
 import lombok.*;
+import springc1.clonecoding.domain.Comment;
 import springc1.clonecoding.domain.ImgPost;
 import springc1.clonecoding.domain.Post;
 
@@ -17,14 +18,15 @@ public class PostResponseDto {
     private String title;
     private String location;
     private List<ImgPost> imgPostList;
+    private List<Comment> commentList;
 
     public PostResponseDto(Post post) {
-        this. nickname = post.getNickname();
+        this.id = post.getId();
+        this.nickname = post.getNickname();
         this.title = post.getTitle();
         this.location = post.getLocation();
         this.imgPostList = post.getImgPostList();
+        this.commentList = post.getCommentList();
+
     }
 }
-
-// 게시글 전체 조회시에 필요
-// 게시글 상세 조회는 바로 entity return.

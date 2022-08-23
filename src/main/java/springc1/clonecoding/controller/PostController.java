@@ -44,7 +44,7 @@ public class PostController {
     }
 
     // 전체 지역 게시글 전체 조회
-    @GetMapping("/api/post/")
+    @GetMapping("/api/post")
     public ResponseDto<?> getAllPosts(){
         return postService.getAllPosts();
     }
