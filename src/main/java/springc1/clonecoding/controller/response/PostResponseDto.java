@@ -18,7 +18,7 @@ public class PostResponseDto {
     private String title;
     private String location;
     private List<ImgPost> imgPostList;
-    private List<Comment> commentList;
+    private List<Comment> comments;
 
     public PostResponseDto(Post post) {
         this.id = post.getId();
@@ -26,7 +26,7 @@ public class PostResponseDto {
         this.title = post.getTitle();
         this.location = post.getLocation();
         this.imgPostList = post.getImgPostList();
-        this.commentList = post.getCommentList();
+        this.comments = post.getCommentList();
 
     }
 }
